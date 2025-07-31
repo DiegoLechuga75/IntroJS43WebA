@@ -1,3 +1,5 @@
+let hasGeneratedOnce = false;
+
 const rangeInput = document.querySelector(".range-input-container input");
 const generatorForm = document.querySelector(".generator-form-container form");
 const copyBoardIcon = document.querySelector(".generated-password-container img");
@@ -43,6 +45,14 @@ function handleGenerator(e) {
 
     const passwordTitle = document.querySelector(".generated-password-container h1");
     passwordTitle.textContent = generatedPassword;
+
+    hasGeneratedOnce = true;
+
+    if(hasGeneratedOnce){
+        const generatorButton = document.querySelector(".generator-form-container form button");
+        console.log(generatorButton);
+        generatorButton.textContent = "Volver a generar"
+    }
 }
 
 function handleCopyBoard(){
